@@ -58,7 +58,7 @@ html, body {
 }
 
 
-
+//**********variables and mixins*************
 
 @light-color: #f3d7ca;
 @dark-color: #c86b85;
@@ -76,6 +76,7 @@ html, body {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
+	padding: 10%;
 }
 
 .row-layout(){
@@ -84,3 +85,63 @@ html, body {
 	padding: 2%;
 }
 
+
+
+//*************selectors***************
+
+
+main {
+	margin: 2%;
+}
+nav {
+	.row-layout();
+
+	a {
+		color: @dark-color;
+		text-decoration: none;
+	}
+}
+
+
+.main-container {
+	display: flex;
+}
+
+h1, h2, h3, h4 {
+	font-family: @large-font;
+}
+
+h2 {
+	padding-bottom: 5%;;
+}
+p, ul {
+	font-family: @small-font;
+}
+
+.left-column {
+	background-color: @light-color;
+	color: @dark-color;
+	width: 40%;
+	.column-layout();
+
+	div {
+		padding:10%;
+	}
+}
+
+.right-column {
+	background-color: @dark-color;
+	color:@light-text-color;
+	width: 60%;
+	height: 900px;
+	.column-layout();
+
+	h2{
+		background-color: @light-color;
+		color: @dark-color;
+	}
+}
+
+.info-box {
+	.info-box-layout();
+}
