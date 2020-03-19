@@ -50,7 +50,8 @@ table {
 
 /* Set every element's box-sizing to border-box */
 * {
-    box-sizing: border-box;
+		box-sizing: border-box;
+		width: 100%;
 }
 
 html, body {
@@ -105,6 +106,11 @@ nav {
 
 .main-container {
 	display: flex;
+
+	@media (max-width:500px) {
+		flex-direction: column;
+		align-items: stretch;
+	}
 }
 
 
@@ -123,14 +129,34 @@ h2 {
 	padding: 2% 0%;
 	text-align: center;
 }
+
+h3 {
+	padding:5%;
+
+	@media(max-width: 500px) {
+		padding: 2%;
+	}
+
+
+}
+
 p, ul {
 	font-family: @small-font;
+	padding: 5%;
+	text-align: left;
+	line-height: 1.2;
 }
 
 .left-column {
 	background-color: @light-color;
 	color: @dark-color;
 	width: 40%;
+
+@media(max-width: 500px) {
+	width: 100%;
+	text-align: center;
+}
+
 	.column-layout();
 
 	img {
@@ -140,10 +166,19 @@ p, ul {
 		margin-left: auto;
 		margin-right: auto;
 		width: 50%;
+@media(max-width: 500px) {
+	border-radius: 10%;
+	margin-top: 10%;;
+}
+
 	}
 
 	div {
 		padding:10%;
+
+		@media(max-width: 500px) {
+			padding: 5%;
+		}
 	}
 }
 
@@ -152,6 +187,12 @@ p, ul {
 	color:@light-text-color;
 	width: 60%;
 	height: 900px;
+
+	@media(max-width: 500px) {
+		width: 100%;
+		text-align: center;
+	}
+
 	.column-layout();
 
 	h2{
@@ -162,4 +203,8 @@ p, ul {
 
 .info-box {
 	.info-box-layout();
+
+	@media(max-width: 500px) {
+		margin: 2%;
+	}
 }
