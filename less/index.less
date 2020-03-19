@@ -50,10 +50,161 @@ table {
 
 /* Set every element's box-sizing to border-box */
 * {
-    box-sizing: border-box;
+		box-sizing: border-box;
+		width: 100%;
 }
 
 html, body {
     height: 100%;
 }
 
+
+//**********variables and mixins*************
+
+@light-color: #f3d7ca;
+@dark-color: #c86b85;
+@light-text-color:#f5eee6;
+
+@large-font:'Open Sans', sans-serif;
+@small-font: 'Zilla Slab', serif;
+.column-layout(){
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
+
+.info-box-layout(){
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	padding: 10%;
+}
+
+.row-layout(){
+	display: flex;
+	justify-content: space-around;
+	padding: 2%;
+}
+
+
+
+//*************selectors***************
+
+
+main {
+	margin: 2%;
+}
+nav {
+	.row-layout();
+
+	a {
+		color: @dark-color;
+		text-decoration: none;
+	}
+}
+
+
+.main-container {
+	display: flex;
+
+	@media (max-width:500px) {
+		flex-direction: column;
+		align-items: stretch;
+	}
+}
+
+
+
+h1, h2, h3, h4 {
+	font-family: @large-font;
+}
+
+h1 {
+	font-size: 2.5rem;
+	padding-bottom: 5%;;
+}
+
+h2 {
+	font-size: 1.3rem;
+	padding: 2% 0%;
+	text-align: center;
+}
+
+h3 {
+	padding:5%;
+
+	@media(max-width: 500px) {
+		padding: 2%;
+	}
+
+
+}
+
+p, ul {
+	font-family: @small-font;
+	padding: 5%;
+	text-align: left;
+	line-height: 1.2;
+}
+
+.left-column {
+	background-color: @light-color;
+	color: @dark-color;
+	width: 40%;
+
+@media(max-width: 500px) {
+	width: 100%;
+	text-align: center;
+}
+
+	.column-layout();
+
+	img {
+		border-radius: 45%;
+		border: 2px solid @dark-color;
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		width: 50%;
+@media(max-width: 500px) {
+	border-radius: 10%;
+	margin-top: 10%;;
+}
+
+	}
+
+	div {
+		padding:10%;
+
+		@media(max-width: 500px) {
+			padding: 5%;
+		}
+	}
+}
+
+.right-column {
+	background-color: @dark-color;
+	color:@light-text-color;
+	width: 60%;
+	height: 900px;
+
+	@media(max-width: 500px) {
+		width: 100%;
+		text-align: center;
+	}
+
+	.column-layout();
+
+	h2{
+		background-color: @light-color;
+		color: @dark-color;
+	}
+}
+
+.info-box {
+	.info-box-layout();
+
+	@media(max-width: 500px) {
+		margin: 2%;
+	}
+}
